@@ -184,4 +184,10 @@ public static class AdventOfCode2015
         return reallyBigInt;
     }
 
+    public static string Day0501(string input)
+    {
+        return "Nice";
+
+    }
+
 }

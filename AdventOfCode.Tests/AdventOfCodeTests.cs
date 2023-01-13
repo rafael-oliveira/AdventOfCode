@@ -86,10 +86,18 @@ public class AdventOfCode2015Tests
 
     // [Test]
     // [TestCase("abcdef", "00000", ExpectedResult = 609043)]
-    // //[TestCase("abcdef", "000000", ExpectedResult = 6742839)]
+    // [TestCase("abcdef", "000000", ExpectedResult = 6742839)]
     // [TestCase("pqrstuv", "00000", ExpectedResult = 1048970 )]
     // public static BigInteger Day04p1Test(string input, string prefix)
     // {
     //     return AdventOfCode2015.Day04p1p2(input, prefix);
     // }
+
+    [Test]
+    [TestCase("ugknbfddgicrmopn", ExpectedResult = "nice")]
+    public static string Day05p1Test(string input)
+    {
+        return AdventOfCode2015.Day0501(input);
+
+    }
 }
