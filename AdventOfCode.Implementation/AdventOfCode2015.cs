@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Numerics;
 namespace LearnCSharp.MyClassLib;
 
@@ -171,13 +172,13 @@ public static class AdventOfCode2015
         BigInteger reallyBigInt = new BigInteger(0);
         using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
         {
-            while(true)
+            while (true)
             {
                 byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input + reallyBigInt);
                 byte[] hashBytes = md5.ComputeHash(inputBytes);
                 var stringResult = Convert.ToHexString(hashBytes);
                 if (stringResult.StartsWith(prefix))
-                break;
+                    break;
 
             }
         }
@@ -186,8 +187,18 @@ public static class AdventOfCode2015
 
     public static string Day0501(string input)
     {
-        return "Nice";
+        var threeVowelsPattern = @"[aeiou]";
+        var doubleLetterPattern = @"([\D])\1+";
+        var stringsToAvoidPattern = @"ab|cd|pq|xy";
 
+        if (Regex.IsMatch(input, threeVowelsPattern) &&
+                Regex.Matches(input, threeVowelsPattern).Count >= 3 &&
+                Regex.IsMatch(input, doubleLetterPattern) &&
+                !Regex.IsMatch(input, stringsToAvoidPattern))
+        {
+            return "nice";
+
+        }
+        return "naughty";
     }
-
 }
