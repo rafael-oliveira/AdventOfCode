@@ -191,14 +191,22 @@ public static class AdventOfCode2015
         var doubleLetterPattern = @"([\D])\1+";
         var stringsToAvoidPattern = @"ab|cd|pq|xy";
 
-        if (Regex.IsMatch(input, threeVowelsPattern) &&
-                Regex.Matches(input, threeVowelsPattern).Count >= 3 &&
-                Regex.IsMatch(input, doubleLetterPattern) &&
-                !Regex.IsMatch(input, stringsToAvoidPattern))
-        {
+        if (Regex.IsMatch(input, threeVowelsPattern) && Regex.Matches(input, threeVowelsPattern).Count >= 3 &&
+                Regex.IsMatch(input, doubleLetterPattern) && !Regex.IsMatch(input, stringsToAvoidPattern))
+
             return "nice";
 
-        }
         return "naughty";
+    }
+
+    public static string Day0502(string input)
+    {
+        var appearsTwice = false;
+        var validRepeats = false;
+
+        appearsTwice = Enumerable.Range(0, input.Length - 1).Any(i => input.IndexOf(input.Substring(i, 2), i + 2) >= 0);
+        validRepeats = Enumerable.Range(0, input.Length - 2).Any(i => input[i] == input[i + 2]);
+
+        return appearsTwice && validRepeats ? "nice" : "naughty";
     }
 }

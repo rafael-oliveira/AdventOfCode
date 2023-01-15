@@ -104,4 +104,16 @@ public class AdventOfCode2015Tests
         return AdventOfCode2015.Day0501(input);
 
     }
+
+    [Test]
+    [TestCase("qjhvhtzxzqqjkmpb", ExpectedResult = "nice")]
+    [TestCase("xxyxx", ExpectedResult = "nice")]
+    [TestCase("xyxy", ExpectedResult = "nice")]
+    [TestCase("uurcxstgmygtbstg", ExpectedResult = "naughty")]
+    [TestCase("ieodomkazucvgmuy", ExpectedResult = "naughty")]
+    public static string Day05p2Test(string input)
+    {
+        return AdventOfCode2015.Day0502(input);
+
+    }
 }
