@@ -1,7 +1,7 @@
-using NUnit.Framework;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Numerics;
+
+
 namespace LearnCSharp.MyClassLib;
 
 public static class AdventOfCode2015
@@ -185,7 +185,7 @@ public static class AdventOfCode2015
         return reallyBigInt;
     }
 
-    public static string Day0501(string input)
+    public static string Day0501Regex(string input)
     {
         var threeVowelsPattern = @"[aeiou]";
         var doubleLetterPattern = @"([\D])\1+";
@@ -194,6 +194,21 @@ public static class AdventOfCode2015
         if (Regex.IsMatch(input, threeVowelsPattern) && Regex.Matches(input, threeVowelsPattern).Count >= 3 &&
                 Regex.IsMatch(input, doubleLetterPattern) && !Regex.IsMatch(input, stringsToAvoidPattern))
 
+            return "nice";
+
+        return "naughty";
+    }
+
+    public static string Day0501(string input)
+    {
+        var threeVowelsPattern = "aeiou";
+        var stringsToAvoidPattern = "ab,cd,pq,xy";
+
+        var threeVowels = input.Where(x => threeVowelsPattern.Contains(x)).Count() >= 3;
+        var duplicate = Enumerable.Range(0, input.Length - 1).Any(i => input[i] == input[i + 1]);
+        var stringsToAvoid = stringsToAvoidPattern.Split(',').Any(input.Contains);
+            
+        if (threeVowels && duplicate && !stringsToAvoid)
             return "nice";
 
         return "naughty";

@@ -23,7 +23,6 @@ public class AdventOfCode2015Tests
     public static int Day01p1Test(string input)
     {
         return AdventOfCode2015.Day01p1(input);
-
     }
 
 
@@ -33,7 +32,6 @@ public class AdventOfCode2015Tests
     public static int Day01p2Test(string input)
     {
         return AdventOfCode2015.Day01p2(input);
-
     }
 
 
@@ -43,7 +41,6 @@ public class AdventOfCode2015Tests
     public static int Day02p1Test(string input)
     {
         return AdventOfCode2015.Day02p1(input);
-
     }
 
     [Test]
@@ -52,7 +49,6 @@ public class AdventOfCode2015Tests
     public static int Day02p2Test(string input)
     {
         return AdventOfCode2015.Day02p2(input);
-
     }
 
     [Test]
@@ -71,7 +67,6 @@ public class AdventOfCode2015Tests
     public static int Day03p1Test(string input)
     {
         return AdventOfCode2015.Day03p1(input);
-
     }
 
     [Test]
@@ -81,7 +76,6 @@ public class AdventOfCode2015Tests
     public static int Day03p2Test(string input)
     {
         return AdventOfCode2015.Day03p2(input);
-
     }
 
     // [Test]
@@ -102,7 +96,6 @@ public class AdventOfCode2015Tests
     public static string Day05p1Test(string input)
     {
         return AdventOfCode2015.Day0501(input);
-
     }
 
     [Test]
@@ -114,6 +107,5 @@ public class AdventOfCode2015Tests
     public static string Day05p2Test(string input)
     {
         return AdventOfCode2015.Day0502(input);
-
     }
 }
